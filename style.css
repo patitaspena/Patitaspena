@@ -1,0 +1,162 @@
+/* Configuración General */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Fondo negro sólido */
+    color: #ffffff; /* Texto blanco */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Encabezado y Logo */
+header {
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #1a1a1a, #000000);
+}
+
+.logo-principal {
+    width: 280px; /* Tamaño para que luzca el diseño de las alas */
+    height: auto;
+    filter: drop-shadow(0px 0px 10px rgba(211, 84, 0, 0.4)); /* Brillo sutil naranja */
+    margin-bottom: 15px;
+}
+
+.tagline {
+    color: #ff4500; /* Color naranja de la marca */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Sección de Servicios */
+.servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.tarjeta {
+    background: #111111;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    border-left: 6px solid #ff4500; /* Línea naranja distintiva */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.tarjeta h3 {
+    margin-top: 0;
+    color: #ff4500;
+}
+
+/* Botón de Contacto */
+.contacto-area {
+    margin: 40px 0;
+}
+
+button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+
+button:active {
+    transform: scale(0.95); /* Efecto de presionado en celular */
+}
+
+footer {
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #555;
+}
+/* Sección de Marcas */
+.marcas-container {
+    padding: 30px 10px;
+    background-color: #0a0a0a;
+}
+
+.marcas-container h2 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.marcas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.marca-tag {
+    background: #222;
+    color: #ff4500;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+/* Efecto para resaltar Italika y Vento */
+.comercial {
+    border-color: #ff4500;
+    box-shadow: 0 0 5px rgba(255, 69, 0, 0.3);
+}
+/* Estilos para Horarios */
+.horarios {
+    padding: 40px 20px;
+    background-color: #111;
+}
+
+.pizarra-horario {
+    max-width: 350px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    background: #000;
+}
+
+.fila-horario {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+    font-size: 0.9rem;
+}
+
+.fila-horario:last-child {
+    border-bottom: none;
+}
+
+.hora {
+    color: #ff4500; /* Naranja para resaltar la hora */
+    font-weight: bold;
+}
+
+.cerrado {
+    color: #555;
+}
+.ubicacion {
+    padding: 40px 20px;
+    background-color: #000;
+    border-top: 1px solid #333;
+}
+
+.btn-mapa {
+    background-color: #4285F4; /* Azul Google Maps */
+    margin-top: 10px;
+}
