@@ -3,95 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PEÑA BROTHERS MECHANICS</title>
+    <title>Peña Brothers | Excellence & Trust</title>
     <style>
-        /* Estilo directo para evitar fallas de carga */
+        :root {
+            --color-principal: #000000;
+            --color-acento: #D4AF37; /* Dorado */
+            --color-texto: #ffffff;
+            --color-gris: #1a1a1a;
+        }
+
         body {
             margin: 0;
-            background-color: #000; /* Fondo negro */
-            color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-principal);
+            color: var(--color-texto);
+            overflow-x: hidden;
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            width: 100%;
+            padding: 20px 0;
             text-align: center;
+            background: rgba(0,0,0,0.95);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--color-acento);
         }
-        header {
-            padding: 40px 20px;
-            background: #111;
-        }
-        .logo-principal {
-            width: 250px;
-            height: auto;
-        }
-        .tagline {
-            color: #ff4500; /* Naranja */
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .servicios {
-            padding: 20px;
-        }
-        .tarjeta {
-            background: #1a1a1a;
-            margin: 15px auto;
-            padding: 20px;
-            width: 80%;
-            border-left: 5px solid #ff4500;
-        }
-        button {
-            background: #ff4500;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1rem;
-            border-radius: 5px;
+
+        nav a {
+            color: var(--color-texto);
+            text-decoration: none;
+            margin: 0 15px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: color 0.3s;
             cursor: pointer;
         }
+
+        nav a:hover, nav a.active { color: var(--color-acento); }
+
+        /* MANEJO DE SECCIONES (PESTAÑAS) */
+        section {
+            display: none; /* Oculta todas las secciones por defecto */
+            padding-top: 100px; /* Espacio para el nav fijo */
+            min-height: calc(100vh - 100px);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        section.active {
+            display: block; /* Solo muestra la sección con clase active */
+        }
+
+        /* SECCIÓN HERO (INICIO) */
+        .hero {
+            display: none;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero.active { display: flex; }
+
+        .logo-peña {
+            max-width: 250px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+        }
+
+        h1 { font-size: 3rem; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
+        .subtitle { color: var(--color-acento); letter-spacing: 3px; margin-top: 10px; }
+
+        /* PROYECTOS */
+        .contenedor-galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .foto img {
+            width: 100%; height: 250px; object-fit: cover;
+            border: 1px solid #333; transition: 0.3s;
+        }
+        .foto img:hover { border-color: var(--color-acento); transform: scale(1.02); }
+
+        /* UBICACIÓN */
+        .mapa-contenedor { 
+            max-width: 1000px; margin: 40px auto; 
+            border: 2px solid var(--color-acento);
+            border-radius: 10px; overflow: hidden;
+        }
+        .btn-maps {
+            display: inline-block;
+            background: var(--color-acento);
+            color: black;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        /* CONTACTO Y REDES */
+        .contacto-container { max-width: 500px; margin: 0 auto; background: #000; padding: 40px; border: 1px solid #333; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        input, textarea { width: 100%; padding: 12px; background: #111; border: 1px solid #333; color: white; margin-top: 5px; box-sizing: border-box; }
+        .btn-enviar { width: 100%; padding: 15px; background: var(--color-acento); border: none; font-weight: bold; cursor: pointer; }
+
+        .redes-sociales { margin-top: 30px; display: flex; justify-content: center; gap: 20px; }
+        .redes-sociales a { color: var(--color-acento); text-decoration: none; font-weight: bold; }
+
+        /* WHATSAPP Y FOOTER */
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; border-radius: 50%; padding: 12px; z-index: 1000; }
+        .whatsapp-float img { width: 35px; height: 35px; }
+        footer { padding: 40px; text-align: center; border-top: 1px solid var(--color-acento); margin-top: 50px; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo Peña Brothers" class="logo-principal">
-        <p class="tagline">EDO. MEX | MECÁNICA ESPECIALIZADA</p>
-    </header>
 
-    <div class="servicios">
-        <div class="tarjeta">
-            <h2>Mantenimiento</h2>
-            <p>Servicio preventivo y correctivo.</p>
-        </div>
-        <div class="tarjeta">
-            <h2>Refacciones</h2>
-            <p>Calidad garantizada para tu motor.</p>
-        </div>
-    </div>
+    <nav>
+        <a onclick="showSection('inicio')" id="nav-inicio">Inicio</a>
+        <a onclick="showSection('proyectos')" id="nav-proyectos">Proyectos</a>
+        <a onclick="showSection('donde-estamos')" id="nav-donde-estamos">Ubicación</a>
+        <a onclick="showSection('contacto')" id="nav-contacto">Contacto</a>
+    </nav>
 
-<a href="https://wa.me/5215636151629?text=Hola%20Peña%20Brothers%20Mechanics,%20necesito%20una%20cita" 
-   style="text-decoration: none; display: inline-block; background: #ff4500; color: white; padding: 15px 30px; border-radius: 5px; font-weight: bold;">
-   AGENDAR CITA
-</a>
+    <section id="inicio" class="hero active">
+        <img src="logo.png" alt="Peña Brothers Logo" class="logo-peña">
+        <h1>Peña Brothers</h1>
+        <div class="subtitle">CALIDAD • INTEGRIDAD • RESULTADOS</div>
+    </section>
 
-</body>
-</html>
-    <section class="marcas-container">
-        <h2>Marcas que trabajamos</h2>
-        <div class="marcas-grid">
-            <div class="marca-tag comercial">ITALIKA</div>
-            <div class="marca-tag comercial">VENTO</div>
-            <div class="marca-tag">HONDA</div>
-            <div class="marca-tag">YAMAHA</div>
-            <div class="marca-tag">SUZUKI</div>
-            <div class="marca-tag">BAJAJ</div>
-            <div class="marca-tag">KTM</div>
+    <section id="proyectos">
+        <h2 style="text-align:center">Portafolio</h2>
+        <div class="contenedor-galeria">
+            <div class="foto"><img src="https://via.placeholder.com/400x300/111/D4AF37?text=Proyecto+1" alt="P1"></div>
+            <div class="foto"><img src="https://via.placeholder.com/400x300/111/D4AF37?text=Proyecto+2" alt="P2"></div>
+            <div class="foto"><img src="https://via.placeholder.com/400x300/111/D4AF37?text=Proyecto+3" alt="P3"></div>
         </div>
     </section>
-    <section class="horarios">
-        <h2>Horarios de Atención</h2>
-        <div class="pizarra-horario">
-            <div class="fila-horario">
-                <span>Lunes a Viernes:</span>
-                <span class="hora">10:00 AM - 6:00 PM</span>
+
+    <section id="donde-estamos" style="text-align: center;">
+        <h2>Nuestra Ubicación</h2>
+        <p>Visítanos en el taller de bicicletas <strong>El Mach</strong></p>
+        <address style="font-style: normal; color: #ccc;">
+            Manzana 024, Zimapan, 54660 Coyotepec, Méx., México
+        </address>
+        <a href="https://www.google.com/maps/place/Taller+de+Bicicletas+*+El+Mach+*,+Manzana+024,+Zimapan,+54660+Coyotepec,+M%C3%A9x./@19.7724883,-99.2014353,20z/data=!4m6!3m5!1s0x85d2210ffa536f21:0x79da34f32ddfb7a0!8m2!3d19.7726032!4d-99.2014722!16s%2Fg%2F11nzc772gz?utm_campaign=ml-ardl&g_ep=Eg1tbF8yMDI2MDEwN18wIOC7DCoASAJQAQ%3D%3D" target="_blank" class="btn-maps">Ver en Google Maps</a>
+        
+        <div class="mapa-contenedor">
+            <iframe src="http://googleusercontent.com/maps.google.com/7" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <section id="contacto" style="text-align: center;">
+        <div class="contacto-container">
+            <h2>Contacto</h2>
+            <form id="contactForm">
+                <div class="form-group"><label>Nombre</label><input type="text" id="nombre" required></div>
+                <div class="form-group"><label>Email</label><input type="email" id="email" required></div>
+                <div class="form-group"><label>Mensaje</label><textarea id="mensaje" rows="4"></textarea></div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+
+            <div class="redes-sociales">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">TikTok</a>
             </div>
-            <div class="fila-horario">
-                <span>Sábados:</span>
-                <span class="hora">10:00 AM - 4:00 PM</span>
-            </div>
-            <div class="fila-horario cerrado"
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 Peña Brothers. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/521234567890" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+    </a>
+
+    <script>
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Quitar clase active de los enlaces
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Mostrar la sección seleccionada
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Marcar enlace activo
+            document.getElementById('nav-' + sectionId).classList.add('active');
+
+            // Subir al inicio de la página automáticamente
+            window.scrollTo(0, 0);
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert(`¡Gracias! Hemos recibido su mensaje.`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>

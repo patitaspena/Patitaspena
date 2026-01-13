@@ -1,10 +1,11 @@
-function enviarWhatsApp() {
-    // Número ya configurado para Peña Brothers Mechanics
-    const telefono = "5215636151629"; 
-    const mensaje = encodeURIComponent("Hola Peña Brothers Mechanics, me gustaría agendar una cita para mi moto.");
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
     
-    // Usamos api.whatsapp.com que tiene mejor compatibilidad en algunos navegadores
-    const url = "https://api.whatsapp.com/send?phone=" + telefono + "&text=" + mensaje;
+    // Mensaje de éxito personalizado
+    alert(`Estimado ${nombre}, su mensaje ha sido enviado con éxito a Peña Brothers.`);
     
-    window.open(url, "_blank");
-}
+    // Reiniciar el formulario
+    this.reset();
+});

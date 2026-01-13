@@ -1,162 +1,155 @@
-/* Configuración General */
+:root {
+    --color-principal: #000000;
+    --color-acento: #D4AF37;
+    --color-texto: #ffffff;
+    --color-gris: #1a1a1a;
+}
+
 body {
     margin: 0;
-    padding: 0;
-    background-color: #000000; /* Fondo negro sólido */
-    color: #ffffff; /* Texto blanco */
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+    scroll-behavior: smooth; /* Desplazamiento suave entre secciones */
+}
+
+/* Navegación */
+nav {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: rgba(0,0,0,0.95);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--color-acento);
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    margin: 0 15px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-/* Encabezado y Logo */
-header {
-    padding: 50px 20px;
-    background: linear-gradient(to bottom, #1a1a1a, #000000);
-}
-
-.logo-principal {
-    width: 280px; /* Tamaño para que luzca el diseño de las alas */
-    height: auto;
-    filter: drop-shadow(0px 0px 10px rgba(211, 84, 0, 0.4)); /* Brillo sutil naranja */
-    margin-bottom: 15px;
-}
-
-.tagline {
-    color: #ff4500; /* Color naranja de la marca */
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-/* Sección de Servicios */
-.servicios {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 40px 20px;
-}
-
-.tarjeta {
-    background: #111111;
-    padding: 25px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 400px;
-    border-left: 6px solid #ff4500; /* Línea naranja distintiva */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
-
-.tarjeta h3 {
-    margin-top: 0;
-    color: #ff4500;
-}
-
-/* Botón de Contacto */
-.contacto-area {
-    margin: 40px 0;
-}
-
-button {
-    background-color: #ff4500;
-    color: white;
-    border: none;
-    padding: 18px 40px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: transform 0.2s;
-}
-
-button:active {
-    transform: scale(0.95); /* Efecto de presionado en celular */
-}
-
-footer {
-    padding: 20px;
-    font-size: 0.8rem;
-    color: #555;
-}
-/* Sección de Marcas */
-.marcas-container {
-    padding: 30px 10px;
-    background-color: #0a0a0a;
-}
-
-.marcas-container h2 {
-    color: #ffffff;
-    font-size: 1.2rem;
+.logo-peña {
+    max-width: 250px;
     margin-bottom: 20px;
+    animation: fadeIn 2s ease-in;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 5px;
     text-transform: uppercase;
+    margin: 0;
 }
 
-.marcas-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.marca-tag {
-    background: #222;
-    color: #ff4500;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: bold;
-    border: 1px solid #333;
-    font-size: 0.9rem;
-}
-
-/* Efecto para resaltar Italika y Vento */
-.comercial {
-    border-color: #ff4500;
-    box-shadow: 0 0 5px rgba(255, 69, 0, 0.3);
-}
-/* Estilos para Horarios */
-.horarios {
-    padding: 40px 20px;
-    background-color: #111;
-}
-
-.pizarra-horario {
-    max-width: 350px;
-    margin: 0 auto;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 20px;
-    background: #000;
-}
-
-.fila-horario {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #222;
-    font-size: 0.9rem;
-}
-
-.fila-horario:last-child {
-    border-bottom: none;
-}
-
-.hora {
-    color: #ff4500; /* Naranja para resaltar la hora */
-    font-weight: bold;
-}
-
-.cerrado {
-    color: #555;
-}
-.ubicacion {
-    padding: 40px 20px;
-    background-color: #000;
-    border-top: 1px solid #333;
-}
-
-.btn-mapa {
-    background-color: #4285F4; /* Azul Google Maps */
+.subtitle {
+    color: var(--color-acento);
+    letter-spacing: 3px;
     margin-top: 10px;
+}
+
+/* Formulario */
+.contacto-section {
+    padding: 100px 20px;
+    background-color: var(--color-gris);
+    display: flex;
+    justify-content: center;
+}
+
+.contacto-container {
+    width: 100%;
+    max-width: 500px;
+    background: #000;
+    padding: 40px;
+    border: 1px solid #333;
+}
+
+.form-group { margin-bottom: 15px; }
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    margin-top: 5px;
+}
+
+input:focus { border-color: var(--color-acento); outline: none; }
+
+.btn-enviar {
+    width: 100%;
+    padding: 15px;
+    background: var(--color-acento);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Estilos Galería */
+.galeria {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.galeria h2, .ubicacion h2 {
+    color: var(--color-acento);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+}
+
+.contenedor-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.foto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Para que las fotos no se deformen */
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.foto img:hover {
+    transform: scale(1.05);
+    border-color: var(--color-acento);
+}
+
+/* Estilos Ubicación */
+.ubicacion {
+    padding: 60px 0;
+    background-color: #050505;
+    width: 100%;
+}
+
+.mapa-contenedor {
+    filter: grayscale(1) invert(1) contrast(1.2); /* Efecto de mapa oscuro elegante */
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid var(--color-acento);
 }
